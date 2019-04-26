@@ -20,3 +20,6 @@ activateEmail = ()=>{
         e.style.display = "block";
     }
 }
+redirect = ()=>{
+    window.location
+}
