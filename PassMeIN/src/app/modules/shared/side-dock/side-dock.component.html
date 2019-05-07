@@ -1,0 +1,46 @@
+<div class="sidenav">
+  <div class="logo">
+    <h2>PassMeIN</h2>
+  </div>
+  <div class="linkeropts">
+    <ul>
+      <li>
+        <a [routerLink]="['/dashboard/']">
+          <i class="ni ni-tv-2 "></i>
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/dashboard/profile']">
+          <i class="ni ni-single-02"></i>
+          My Profile
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/dashboard/settings']">
+          <i class="ni ni-settings "></i>
+          Settings
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/dashboard/getting-started']">
+          <i class="ni ni-spaceship"></i>
+          Getting Started
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/dashboard/contactus']">
+          <i class="ni ni-chat-round "></i>
+          Contact us
+        </a>
+      </li>
+      <li>
+        <a (click)='logout()'>
+          <i class="ni ni-user-run"></i>
+          Logout
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>

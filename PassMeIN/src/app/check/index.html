@@ -1,0 +1,238 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard - Leverage the advanced password manager's benefits</title>
+
+    <!-- Favicon #TO ADD -->
+
+    <!-- Icons  -->
+    <link href="./assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+    <link href="./assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./core.css">
+
+    <!-- Javascript -->
+    <script src="./core.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="filterMe"></div>
+    <div class="parent">
+        <!-- Sidenav -->
+        <div class="sidenav">
+            <div class="logo">
+                <h2>PassMeIN</h2>
+            </div>
+            <div class="linkeropts">
+                <ul>
+                    <li>
+                        <a href="./index.html">
+                            <i class="ni ni-tv-2 "></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./profile.html">
+                            <i class="ni ni-single-02"></i>
+                            My Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./settings.html">
+                            <i class="ni ni-settings "></i>
+                            Settings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./getting-started.html">
+                            <i class="ni ni-spaceship"></i>
+                            Getting Started
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./contact-us.html">
+                            <i class="ni ni-chat-round "></i>
+                            Contact us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html">
+                            <i class="ni ni-user-run"></i>
+                            Logout
+                        </a>
+                    </li>
+                    <li onclick="openOtpBox();" style="cursor:pointer;">
+
+                        <i class="ni ni-user-run" ></i>
+                        OTP box (DEMO)
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <div class="uppernav">
+                    <h3>DASHBOARD</h3>
+                    <form action="" class="searchform">
+                        <input type="text" class="searchbox" placeholder="Search">
+                    </form>
+
+                    <div class="side-button">
+                        <a href="profile.html">
+                            <div class="docker">
+                                <h3>Jessica</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="cards-container">
+                        <div class="card">
+                            <h2>Facebook</h2>
+                            <p>{{Username}}</p>
+                            <div class="box">
+
+                                <div class="buttons">
+                                    <i class="ni ni-archive-2" onclick="deletealert()"></i>
+                                    <i class="ni ni-settings" onclick="openCardSettings()"></i>
+                                    <i class="ni ni-send" onclick="redirect()"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h2>Twitter</h2>
+                            <p>{{Username}}</p>
+                            <div class="box">
+
+                                <div class="buttons">
+                                    <i class="ni ni-archive-2" onclick="deletealert()"></i>
+                                    <i class="ni ni-settings" onclick="openCardSettings()"></i>
+                                    <i class="ni ni-send"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h2>CARD1</h2>
+                        </div>
+                        <div class="card">
+                            <h2>CARD1</h2>
+                        </div>
+                        <div class="card">
+                            <h2>CARD1</h2>
+                        </div>
+                        <div class="card">
+                            <h2>CARD1</h2>
+                        </div>
+                        <div class="card">
+                            <h2>CARD1</h2>
+                        </div>
+                        <div class="card">
+                            <h2>CARD1</h2>
+                        </div>
+                        <div class="card">
+                            <h2>CARD1</h2>
+                        </div>
+                        <div class="card">
+                            <h2>CARD1</h2>
+                        </div>
+                    </div>
+
+                    <div class="add-card" onclick="displaycard()">
+                        <div class="icon">
+                            <i class="ni ni-fat-add"></i>
+                        </div>
+                    </div>
+
+                    <div class="add-card-form">
+                        <div class="close" onclick="closeCard()">
+                            <i class="ni ni-fat-remove"></i>
+                        </div>
+                        <form>
+                            <div class="input-box">
+                                <label for="input-url">URL</label>
+                                <input type="text" placeholder="https://www.facebook.com/" id="input-url act-input">
+                            </div>
+                            <div class="input-box">
+                                <label for="input-username">Username/Email</label>
+                                <input type="text" placeholder="jessica@gmail.com/jessica98"
+                                    id="input-username act-input">
+                            </div>
+                            <div class="input-box">
+                                <label for="input-password">Password</label>
+                                <input type="text" id="input-password act-input">
+                            </div>
+                            <div class="input-box">
+                                <label for="input-notes">Notes</label>
+                                <textarea rows="5" placeholder="Put Notes or hints" id="input-notes act-input"
+                                    style="resize:none;padding: 1%;"></textarea>
+                            </div>
+                            <div class="input-box">
+                                <button type="submit" class="add-btn" onclick="closeCard()">ADD</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card-settings-form">
+                        <div class="close" onclick="closeCardSettings()">
+                            <i class="ni ni-fat-remove"></i>
+                        </div>
+                        <form>
+                            <div class="input-box">
+                                <label for="input-url">URL</label>
+                                <input type="text" placeholder="https://www.facebook.com/" id="input-url act-input">
+                            </div>
+                            <div class="input-box">
+                                <label for="input-username">Username/Email</label>
+                                <input type="text" placeholder="jessica@gmail.com/jessica98"
+                                    id="input-username act-input">
+                            </div>
+                            <div class="input-box">
+                                <label for="input-password">Password</label>
+                                <input type="text" id="input-password act-input placeholder=" *********">
+                            </div>
+                            <div class="input-box">
+                                <label for="input-notes">Notes</label>
+                                <textarea rows="5" placeholder="Put Notes or hints" id="input-notes act-input"
+                                    style="resize:none;padding: 1%;"></textarea>
+                            </div>
+                            <div class="input-box">
+                                <button type="submit" class="add-btn" onclick="closeCardSettings()">Save</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="delete-alert">
+                        <h2>Are you sure you want to delete your card?</h2>
+                        <div class="buttons">
+                            <button class="danger-button" onclick="closedeleteAlert()">Yes</button>
+                            <button class="cancel" onclick="closedeleteAlert()">Cancel</button>
+                        </div>
+                    </div>
+
+                    <div class="otp-box">
+                        <h2>Enter the otp in the box</h2>
+                        <input type="number" name="otp-number" id="otp-number" autofocus>
+                        <button class="otp-button" onclick="closeOtpBox();">Submit OTP</button>
+                        <a href="#" style="text-decoration:none;color: #222222;">Resend OTP</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

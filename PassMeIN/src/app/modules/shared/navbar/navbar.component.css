@@ -1,0 +1,42 @@
+.uppernav{
+    font-weight: 400;
+    width: 100%;
+    background-color: #d32d27;
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.uppernav .searchbox{
+    
+    background-color: rgba(201, 114, 111,0.5) ;
+    border: none;
+    width: 350px;
+    outline: none;
+    color: #FEFEFE;
+    font-size: 15px;
+    padding: 3% 0 4% 5%;
+}
+.uppernav .searchbox:hover{
+    background-color: rgb(201, 114, 111);
+}
+.uppernav .searchbox::placeholder{
+    color: #FEFEFE;
+}
+.uppernav .side-button a{
+    text-decoration: none;
+    color: #FEFEFE;
+}
+.uppernav .side-button .docker{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.uppernav .side-button .docker #dp{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 5px;
+}

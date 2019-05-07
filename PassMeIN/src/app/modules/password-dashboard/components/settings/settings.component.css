@@ -1,0 +1,67 @@
+button:disabled{
+    cursor: disabled;
+}
+.settings {
+    width: 70%;
+    margin: 2% auto;
+    border-radius: 5px;
+    padding: 5%;
+    background: #fefefe ;
+}
+.settings .header{
+    color: #222222;
+    text-align: center;
+}
+.settings .settings-form{
+    padding: 2%;
+}
+.input-box{
+    display: flex;
+    flex-direction: column;
+    color: #222222;
+    margin-top: 2%;
+}
+.input-box label{
+    font-weight: 600;
+}
+.input-box input{
+    padding: 1%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 1px 1px #222222;
+    outline: none;
+}
+.settings .settings-form .save-btn{
+    width: 20%;
+    padding: 1%;
+    background-color: #d32d27;
+    border:none;
+    outline: none;
+    color: #FEFEFE;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2% auto;
+}
+.settings .settings-form .save-btn:hover{
+    box-shadow: 1px 1px 1px 2px #dd2233;
+    transition: 0.1s ease;
+}
+.settings .settings-form .disabled{
+    width: 20%;
+    padding: 1%;
+    background-color: #d32d27;
+    border:none;
+    outline: none;
+    color: #FEFEFE;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: not-allowed;
+    margin: 2% auto;
+}
+.settings .settings-form .disabled:hover{
+    box-shadow: 1px 1px 1px 2px #dd2233;
+    transition: 0.1s ease;
+}
+
+

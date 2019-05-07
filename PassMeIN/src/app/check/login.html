@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+    <link rel="icon" href="./assets/img/logosmall.png" type="image/gif" sizes="16x16">
+    <title>Login | PassmeIN</title>
+    <script src="./login.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bar">
+            <div class="bar-box">
+                <div class="left">
+                    <!-- <h2 class="companyname">PassmeIN</h2> -->
+                    <a href="./index.html">
+                        <img class="logo" src="./assets/img/logoredblack.png" alt="">
+                    </a>
+                </div>
+                <div class="right">
+                    <!--Login Form with email phone otp and feature is placeholder, smart dropdown-->
+                    <div class="loginForm">
+                        <h2 style="margin-bottom:5%; color: #312628;">LOGIN</h2>
+                        <form action="" class="inpform inp-email">
+                            <input type="email" class="inp" name="" id="" placeholder="EMAIL">
+                            <div class="otp">
+                                <input type="number" min="0" max="9" step="1" class="inp otpnum" placeholder="0">
+                                <input type="number" min="0" max="9" step="1" class="inp otpnum" placeholder="1">
+                                <input type="number" min="0" max="9" step="1" class="inp otpnum" placeholder="2">
+                                <input type="number" min="0" max="9" step="1" class="inp otpnum" placeholder="3">
+                            </div>
+                            <a href="./templates/index.html" class="btn" style="text-decoration:none;color:#FEFEFE;">Login</a>
+                        </form>
+                        <form action="" class="inpform inp-phone">
+                            <input type="tel" class="inp" name="usrtel" placeholder="PHONE (+91 981XXXXXX)">
+                            <div class="otp">
+                                <input type="number" min="0" max="9" step="1" class="inp otpnum" placeholder="0">
+                                <input type="number" min="0" max="9" step="1" class="inp otpnum" placeholder="1">
+                                <input type="number" min="0" max="9" step="1" class="inp otpnum" placeholder="2">
+                                <input type="number" min="0" max="9" step="1" class="inp otpnum" placeholder="3">
+                            </div>
+                            <a href="./templates/index.html" class="btn" style="text-decoration:none;color:#FEFEFE;">Login</a>
+                        </form>
+                        <!--Chage of Link with the help of Angular2+ when user wants to shift to signup page-->
+                        <div class="changeLinks">
+                            <p onclick="activatePhone();" class="inp-email">Login with Phone</p>
+                            <p onclick="activateEmail();" class="inp-phone">Login with Email</p>
+                            <p style="color:#312628;">Don't have an account?
+                                <span id="signup">
+                                    <a href="./signup.html">
+                                        Sign&nbspUp
+                                    </a>
+                                    <!-- <div class="sepbox">
+                                        <hr class="seperator">
+                                    </div> -->
+                                </span>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

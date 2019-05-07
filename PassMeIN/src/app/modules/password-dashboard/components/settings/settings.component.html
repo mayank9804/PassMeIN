@@ -1,0 +1,30 @@
+<div class="settings">
+    <div class="header">
+        <h2>Settings</h2>
+    </div>
+    <div class="settings-form">
+        <form #settingsForm="ngForm">
+
+            <div class="input-box">
+                <label for="input-email">Email</label>
+                <input type="email" required value="{{user['email']}}" placeholder="Email"
+                    id="input-username act-input" name="email" [(ngModel)]="user['email']" #email="ngModel">
+            </div>
+            
+            <div class="input-box">
+                <button type="submit" [ngClass]="{'disabled':!email.valid,'save-btn': email.valid}" (click)='updateEmail()'>Update</button>
+            </div>
+
+
+            <div class="input-box">
+                <label for="input-number">Mobile Number</label>
+                <input type="tel" required value="{{user['phone']}}" name="phone" id="input-number act-input" [(ngModel)]="user['phone']" #phone="ngModel">
+            </div>
+
+            <div class="input-box">
+                <button type="submit" [ngClass]="{'disabled':!phone.valid,'save-btn':phone.valid}" (click)="updatePhoneNumber()">Update</button>
+            </div>
+
+        </form>
+    </div>
+</div>

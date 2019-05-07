@@ -1,0 +1,47 @@
+.profile {
+    width: 70%;
+    margin: 2% auto;
+    border-radius: 5px;
+    padding: 5%;
+    background: #fefefe ;
+}
+.profile .header{
+    color: #222222;
+    text-align: center;
+}
+.profile .account-form{
+    padding: 2%;
+}
+.input-box{
+    display: flex;
+    flex-direction: column;
+    color: #222222;
+    margin-top: 2%;
+}
+.input-box label{
+    font-weight: 600;
+}
+.input-box input{
+    padding: 1%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 1px 1px #222222;
+    outline: none;
+}
+.profile .account-form .save-btn{
+    width: 20%;
+    padding: 1%;
+    background-color: #d32d27;
+    border:none;
+    outline: none;
+    color: #FEFEFE;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2% auto;
+}
+.profile .account-form .save-btn:hover{
+    box-shadow: 1px 1px 1px 2px #dd2233;
+    transition: 0.1s ease;
+}
+

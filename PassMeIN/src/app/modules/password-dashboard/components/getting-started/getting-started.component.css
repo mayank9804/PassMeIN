@@ -1,0 +1,21 @@
+.guide{
+    width: 70%;
+    margin: 2% auto;
+    border-radius: 5px;
+    padding: 5%;
+    background: #fefefe ;
+}
+.guide .header{
+    color: #222222;
+    text-align: center;
+}
+.guide .editorial{
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}

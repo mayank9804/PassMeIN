@@ -1,0 +1,104 @@
+
+<div class="cards">
+  <div class="cards-container">
+    <div class="card" *ngFor="let card of cards" >
+      <h2>{{card["site-name"]}}</h2>
+      <p>{{card["username"]}}</p>
+      <p>{{card["id"]}}</p>
+      <div class="box">
+        <div class="buttons">
+          <i class="ni ni-archive-2" onclick="deletealert();" (click)='setCard(card["id"]);' ></i>
+          <i class="ni ni-settings" onclick="openCardSettings()" (click)='setCard(card["id"]);'></i>
+          <i class="ni ni-send" onclick="redirect()"></i>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="add-card" onclick="displaycard()">
+    <div class="icon" style="width:50px;height:50px;">
+      <i class="ni ni-fat-add"></i>
+    </div>
+  </div>
+
+  <div class="add-card-form">
+    
+    <div class="close" onclick="closeCard()">
+      <i class="ni ni-fat-remove"></i>
+    </div>
+    <form #addCardForm="ngForm">
+      <div class="input-box">
+        <label for="input-url-newcard">URL</label>
+        <input type="text" required ngModel placeholder="https://www.facebook.com/" id="input-url-newcard act-input" name="url">
+      </div>
+      <div class="input-box">
+        <label for="input-username-newcard">Username</label>
+        <input type="text" required ngModel placeholder="Demo9804" id="act-input input-username-newcard" name="username">
+      </div>
+
+      <div class="input-box">
+        <label for="input-email-newcard">Email</label>
+        <input type="email" required ngModel placeholder="jessica@gmail.com" id="input-email-newcard act-input" name="email">
+      </div>
+      <div class="input-box">
+        <label for="input-password-newcard">Password</label>
+        <input type="password" required ngModel id="input-password-newcard act-input" name="password">
+      </div>
+      <div class="input-box">
+        <label for="input-sitename-newcard">Site Name</label>
+        <input type="text" required ngModel id="input-sitename-newcard act-input" name="sitename">
+      </div>
+      <div class="input-box">
+        <label for="input-notes-newcard">Notes</label>
+        <textarea rows="5" placeholder="Put Notes or hints" id="input-notes-newcard act-input"
+          style="resize:none;padding: 1%;" required ngModel name="notes"></textarea>
+      </div>
+      
+      <div class="input-box">
+        <button type="submit" [ngClass]="{'disabled':!addCardForm.valid,'save-btn': addCardForm.valid}" (click)="addCard(addCardForm.value);addCardForm.reset()" onclick="closeCard()" >ADD</button>
+      </div>
+    </form>
+
+  </div>
+
+  <div class="card-settings-form">
+    <div class="close" onclick="closeCardSettings()" (click)="cardSettingForm.reset()">
+      <i class="ni ni-fat-remove"></i>
+    </div>
+    <form #cardSettingForm="ngForm">
+      <div class="input-box">
+        <label for="input-url-setting">URL</label>
+        <input type="text" placeholder="https://www.facebook.com" ngModel name="url" [(ngModel)]='selectedCard["url"]' id="input-url-setting act-input" required>
+      </div>
+      <div class="input-box">
+        <label for="input-email-setting">Email</label>
+        <input type="text" placeholder="xyz@gmail.com" id="input-email-setting act-input" ngModel [(ngModel)]='selectedCard["email"]' name="email" required>
+      </div>
+      <div class="input-box">
+        <label for="input-username-setting">Username</label>
+        <input type="text" placeholder="mayank9804" id="input-username-setting act-input" ngModel [(ngModel)]='selectedCard["username"]' name="username" required>
+      </div>
+      <div class="input-box">
+        <label for="input-password-setting">Password</label>
+        <input type="password" id="input-password-setting act-input" placeholder="Password" name="password" ngModel [(ngModel)]='selectedCard["password"]' required>
+      </div>
+      <div class="input-box">
+        <label for="input-notes-setting">Notes</label>
+        <textarea rows="5" placeholder="Put Notes or hints"  id="input-notes-setting act-input" name="notes" ngModel [(ngModel)]='selectedCard["notes"]' style="resize:none;padding: 1%;" required></textarea>
+      </div>
+      <div class="input-box">
+        <button type="submit" [ngClass]="{'disabled':!cardSettingForm.valid,'add-btn': cardSettingForm.valid}" (click)='updateCard();cardSettingForm.reset()' onclick="closeCardSettings()">Save</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="delete-alert">
+    <h2>Are you sure you want to delete your card?</h2>
+    <div class="buttons">
+      <button class="danger-button" (click)='deleteCard()'  onclick="closedeleteAlert()">Yes</button>
+      <button class="cancel" onclick="closedeleteAlert()">Cancel</button>
+    </div>
+  </div>
+  
+</div>

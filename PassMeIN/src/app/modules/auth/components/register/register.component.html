@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="bar">
+    <div class="bar-box">
+      <div class="left">
+        <a href="#">
+          <img class="logo" src="assets/img/logoredblack.png" alt="">
+        </a>
+      </div>
+      <div class="right">
+        <!--Login Form with email phone otp and feature is placeholder, smart dropdown-->
+        <div class="loginForm">
+          <h2 style="margin-bottom:5%; color: #312628;">REGISTER</h2>
+          <form class="inpform" #registerForm="ngForm">
+            <input type="email" class="inp" name="email"  required placeholder="EMAIL" ngModel>
+            <input type="tel" class="inp" name="phone" required placeholder="PHONE (+91 981XXXXXX)" ngModel>
+            
+            <button type="submit" class="btn" [ngClass]='{"disable":!registerForm.valid || regIn}' [disabled]='(!registerForm.valid || regIn)' (click)='register(registerForm.value)' style="text-decoration:none;color:#FEFEFE;">Register</button>
+          </form>
+          <!--Chage of Link with the help of Angular2+ when user wants to shift to signup page-->
+          <div class="changeLinks">
+
+            <p style="color:#312628;">Already have an account?
+              <span id="signup">
+                <a [routerLink]='["/login"]' [ngClass]="{'disabled':regIn,'enabled':!regIn}">
+                  Log&nbsp;In
+                </a>
+              </span>
+            </p>
+            <p *ngIf='regIn'>Hold on..</p>
+            <p *ngIf='message'>{{message}}</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

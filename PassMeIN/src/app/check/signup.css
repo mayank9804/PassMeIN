@@ -1,0 +1,208 @@
+/* colors:
+    main: #9F896F
+    light: #F0F0EA
+    dark: #6D706F
+    darkest: #444546
+*/
+/*Full body layout*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Asap',sans-serif;
+}
+/*Text decoration for all anchor tags*/
+a{
+    text-decoration: none;
+    color: #444546;
+}
+/*Base color for bakground*/
+body{
+    background-color: #6D706F;
+}
+/*Main container to work in body*/
+.container{
+    background-color: #9F896F;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px 20px 0px;
+    transform: skewY(-20deg);
+    transform-origin: 0;
+}
+.bar{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 70%;
+    margin-top: 5%;
+    border-radius: 10px; 
+    background-color: #F0F0EA;
+    transform: skewY(20deg);
+    transform-origin: 0;
+}
+.bar-box{
+    flex:1;
+    display: flex;
+    justify-content: space-evenly;   
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 10px 0px 10px;
+    
+}
+.bar-box .left{
+    
+    height: 50%;
+    width: 50%;
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    /* transition: 0.2s ease-in-out; */
+    /* box-shadow: -10px -10px 150px #444546; */
+}
+.bar-box .left .companyname{
+    font-weight: bold;
+    color: #444546;
+    font-size: 50px;
+}
+.bar-box .left a{
+    width: 100%;
+}
+.bar-box .left .logo{
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height: 100%;
+}
+
+.bar-box .left h2{
+    font-size: 50px;
+    
+}
+.bar-box .right{
+    height: 90%;
+    width: 50%;
+    background-color: #F0F0EA;
+    align-items: center;    
+}
+
+.bar-box .right .loginForm{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bar-box .right .loginForm{
+    text-align: center;
+}
+.bar-box .right .loginForm .inpform{
+    width: 70%;
+}
+.bar-box .right .loginForm .inpform input::placeholder{
+    text-indent: 0%;
+    transition:text-indent 0.4s;
+}
+.bar-box .right .loginForm .inpform input:focus::placeholder{
+    text-indent: 100%;
+    transition:text-indent 0.4s;
+   
+}
+.bar-box .right .loginForm .inp{
+    font-family: 'Asap' ,sans-serif;
+    border: none;
+    border-bottom: 1px solid #555;
+    width: 100%;
+    height: 40px;
+    margin: 5px;
+    background-color: #F0F0EA;
+    outline: none;
+}
+.bar-box .right .loginForm .otp{
+    display: flex;
+    flex-direction: row;
+}
+.bar-box .right .loginForm .otp .otpnum{
+    text-align: center;
+    font-size: 22px;
+}
+.bar-box .right .loginForm .btn{
+    display: block;
+    height: 40px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #F0F0EA;
+    font-size: 15px;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    outline: none;
+    background-color: #9F896F;
+}
+.bar-box .right .loginForm .btn:hover{
+    cursor: pointer;
+    box-shadow: 5px 5px 20px 2px #444546;
+    transition: 0.2s ease;
+}
+.bar-box .right .loginForm .changeLinks{
+    margin-top: 5%;
+}
+
+.bar-box .right .loginForm .changeLinks p,a{
+    margin: 10px;
+    color: #6D706F;
+}
+.bar-box .right .loginForm .changeLinks a{
+    color: #6D706F;
+}
+/* .bar-box .right .loginForm .changeLinks .sepbox{
+    display: flex;
+    align-items: flex-end;
+    justify-items: flex-end;
+    justify-content:flex-end;
+    width: 0%;
+}
+.bar-box .right .loginForm .changeLinks .seperator{
+    width: 23%;
+    margin-right: 5.5%;
+}
+.bar-box .right .loginForm .changeLinks #signup .a:hover +.sepbox {
+    
+    width: 100%;
+    transition: width 0.3s;
+    
+} */
+
+@media (max-width:1200px){
+    .bar{
+        width: 90%;
+    }
+}
+
+@media (max-width: 900px) {
+    .bar{
+        width: 95%;
+        height: 90%;
+    }
+   .bar-box .left{
+        display:none;
+    }
+    .bar-box .right{
+        width:100%;
+    }
+    .bar-box .right .loginForm .changeLinks p,a{
+        font-size:0.95em;
+        margin:10px 5px;
+    }
+    .loginForm h2{
+        font-size:1.8em;
+    }
+    .bar-box .right .loginForm .inpform {
+        width:80%;
+    }
+}
+

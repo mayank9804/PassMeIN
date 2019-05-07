@@ -1,0 +1,41 @@
+<div class="profile">
+  <div class="header">
+    <h2>My account</h2>
+  </div>
+
+  <div class="account-form">
+    <form #profileForm="ngForm" >      
+      <div class="input-box">
+        <label for="input-username">Username</label>
+        <input  type="text" name="username" required value="{{user['username']}}" placeholder="Username" id="username input-username act-input" #username="ngModel" [(ngModel)]="user['username']">
+        <p [hidden]="username.valid || username.pristine">Username is required</p>
+
+      </div>
+
+      <div class="input-box">
+        <label for="input-fname">First Name</label>
+        <input  type="text" name="fname" required value="{{user['fname']}}" placeholder="First Name" id="input-fname act-input" #fname="ngModel" [(ngModel)]="user['fname']">        
+        <p [hidden]="fname.valid || fname.pristine">First Name is required</p>
+      </div>
+
+      <div class="input-box">
+        <label for="input-lname">Last Name</label>
+        <input  type="text" name="lname" required value="{{user['lname']}}" placeholder="Last Name" id="input-lname act-input lname" #lname="ngModel" [(ngModel)]="user['lname']">
+        <p [hidden]="lname.valid || lname.pristine">Last Name is required</p>
+      </div>
+
+      <div class="input-box">
+        <label for="input-address">Address</label>
+        <input type="text" name="address" required value="{{user['address']}}" placeholder="Address"
+          id="input-address act-input address"  #address="ngModel" [(ngModel)]="user['address']">
+          <p [hidden]="address.valid || address.pristine">Address is required</p>
+      </div>
+
+      <div class="input-box">
+        <button type="submit" [disabled]="!profileForm.form.valid" class="save-btn" (click)="updateProfile(profileForm.value)">Save</button>
+      </div>
+
+    </form>
+    
+  </div>
+</div>

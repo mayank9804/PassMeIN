@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="bar">
+    <div class="bar-box">
+      <div class="left">
+        <a href="#">
+          <img class="logo" src="assets/img/logoredblack.png" alt="">
+        </a>
+      </div>
+      <div class="right">
+        <!--Login Form with email phone otp and feature is placeholder, smart dropdown-->
+        <div class="loginForm">
+          <h2 style="margin-bottom:5%; color: #312628;">LOGIN</h2>
+          <form class="inpform inp-email" #loginForm="ngForm">
+            <input type="email"  *ngIf='mode==2' required class="inp" name="email" placeholder="EMAIL" ngModel>
+            <input type="tel" *ngIf='mode==1' required class="inp" name="phone" placeholder="PHONE (+91 981XXXXXX)" ngModel>
+            
+           
+
+            <button class="btn" style="text-decoration:none;color:#FEFEFE;" 
+            [disabled]='(!loginForm.valid || loggingIn)' 
+            [ngClass]="{'enabled':(loginForm.valid && !loggingIn),'disabled':(!loginForm.valid || loggingIn)}" (click)='login(loginForm.value)'>Login</button>
+
+          </form>
+         
+          <!--Chage of Link with the help of Angular2+ when user wants to shift to signup page-->
+          <div class="changeLinks">
+            <p class="inp-email" *ngIf='mode==2' (click)='loginMode(1)' [ngClass]="{'disabled':loggingIn,'enabled':!loggingIn}">Login with Phone</p>
+            <p class="inp-phone" *ngIf='mode==1' (click)='loginMode(2)' [ngClass]="{'disabled':loggingIn,'enabled':!loggingIn}">Login with Email</p>
+            
+            <p style="color:#312628;">Don't have an account?
+              <span id="signup">
+                <a [routerLink]='["/register"]' [ngClass]="{'disabled':loggingIn,'enabled':!loggingIn}">
+                  Sign&nbsp;Up
+                </a>
+              </span>
+            </p>
+            <p *ngIf='loggingIn'>Logging you in. Please wait...(Open authy app to approve request)</p>
+            <p *ngIf='message'>{{message}}</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

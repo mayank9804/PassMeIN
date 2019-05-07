@@ -1,0 +1,314 @@
+.cards{
+    font-weight: 300;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.cards .cards-container{
+    padding: 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.cards .cards-container .card{
+    padding: 2%;
+    background-color: #FEFEFE;
+    border-radius: 8px;
+    color: #222222;
+    height: 120px;
+    width: 250px;
+    margin: 2%;
+    box-shadow: #222222;
+    position: relative;
+    cursor: pointer;
+    transform: scale(0.95);
+}
+.cards .cards-container .card .box{
+    display: none;
+    position: absolute;
+    
+    bottom: 5px;
+    width: 80%;
+}
+.cards .cards-container .card:hover{
+    transform: scale(1);
+    transition: 0.3s;
+}
+.cards .cards-container .card:hover .box{
+    display: block;
+    transition: display 0.3s ease-in-out;
+}
+.cards .cards-container .card .box .buttons{
+    display: flex;
+    flex-direction: row;
+}
+.cards .cards-container .card .box .buttons i{
+    margin-right: 2%;
+}
+.add-card{
+    position: fixed;
+    bottom: 10px;
+    right: 25px;
+    font-size: 50px;
+    border-radius: 50%;
+    border:1px solid #FEFEFE;
+    cursor: pointer;
+    transform: scale(0.9);
+}
+.add-card:hover{
+    transform: scale(1);
+    transition: 0.1s ease-in;
+    color: #222222;
+    background-color: #FEFEFE;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    color: #222222;
+    margin-top: 2%;
+}
+.input-box label{
+    font-weight: 600;
+}
+.input-box input{
+    padding: 1%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 1px 1px #222222;
+    outline: none;
+}
+.save-btn{
+    width: 20%;
+    padding: 1%;
+    background-color: #d32d27;
+    border:none;
+    outline: none;
+    color: #FEFEFE;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2% auto;
+}
+.save-btn:hover{
+    box-shadow: 1px 1px 1px 2px #dd2233;
+    transition: 0.1s ease;
+}
+
+
+/* ADD CARD FORM starts */
+.add-card-form{
+    display: none;
+    z-index: 105;
+    width: 70%;
+    height: 88%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 3%;
+    position: fixed;
+    top: 10%;
+    left: 20%;
+    border-radius: 5px;
+}
+.add-card-form .close{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-content: flex-end;
+}
+.add-card-form .close i{
+    color: black;
+    font-size: 30px;
+    cursor: pointer;
+}
+.add-card-form .close i:hover{
+    font-weight: 700;
+}
+.add-btn{
+    width: 20%;
+    padding: 1%;
+    background-color: #d32d27;
+    border:none;
+    outline: none;
+    color: #FEFEFE;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2% auto;
+}
+.add-btn:hover{
+    box-shadow: 1px 1px 1px 2px #dd2233;
+    transition: 0.1s ease;
+}
+/* ADD card form ends */
+
+/* Delete alert starts */
+.delete-alert{
+    z-index: 200;
+    display: none;
+    color: #222222;
+    background-color: white;
+    padding: 2%;
+    border-radius: 10px;
+    position: fixed;
+    top:50%;
+    left: 30%;
+    width: 60%;
+
+}
+.delete-alert .buttons{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    justify-items: flex-end;
+}
+.delete-alert .danger-button{
+    width: 20%;
+    padding: 1%;
+    background-color: #d32d27;
+    border:none;
+    outline: none;
+    color: #FEFEFE;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 1%;
+}
+
+.delete-alert .cancel{
+    width: 20%;
+    padding: 1%;
+    background-color: #222222;
+    border:none;
+    outline: none;
+    color: #fefefe;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+/* Delete alert ends */
+
+
+/* CARD SETTINGS FORM starts */
+.card-settings-form{
+    display: none;
+    z-index: 105;
+    width: 70%;
+    height: 88%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 3%;
+    position: fixed;
+    top: 10%;
+    left: 20%;
+    border-radius: 5px;
+}
+.card-settings-form .close{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-content: flex-end;
+}
+.card-settings-form .close i{
+    color: black;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.card-settings-form .close i:hover{
+    font-weight: 700;
+}
+
+.add-btn{
+    width: 20%;
+    padding: 1%;
+    background-color: #d32d27;
+    border:none;
+    outline: none;
+    color: #FEFEFE;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2% auto;
+}
+.add-btn:hover{
+    box-shadow: 1px 1px 1px 2px #dd2233;
+    transition: 0.1s ease;
+}
+/* ADD card form ends */
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.update-btn{
+    width: 100%;
+    padding: 10%;
+    background-color: #d32d27;
+    border:none;
+    outline: none;
+    color: #FEFEFE;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2% 2%;
+}
+.update-btn:hover{
+    box-shadow: 1px 1px 1px 2px #dd2233;
+    transition: 0.1s ease;
+}
+
+
+
+.otp-box{
+    position: fixed;
+    top: 30%;
+    left: 40%;
+    padding: 5%;
+    background-color: #fefefe;
+    color: #222222;
+    text-align: center;
+    border-radius: 5px;
+    display: none;
+    z-index: 200;
+}
+.otp-box #otp-number{
+    width: 100%;
+    margin: 2% auto;
+    display: block;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid #222222;
+    padding: 2%;
+}
+.otp-box .otp-button{
+    width: 100%;
+    padding: 3%;
+    background-color: #d32d27;
+    border:none;
+    outline: none;
+    color: #fefefe;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2% 0%;   
+}
+.disabled{
+    width: 20%;
+    padding: 1%;
+    background-color: #d32d27;
+    border:none;
+    outline: none;
+    color: #FEFEFE;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: not-allowed;
+    margin: 2% auto;
+}
+.disabled:hover{
+    box-shadow: 1px 1px 1px 2px #dd2233;
+    transition: 0.1s ease;
+}
+
+/* Main content ends */

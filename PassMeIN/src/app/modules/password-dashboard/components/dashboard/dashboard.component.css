@@ -1,0 +1,25 @@
+/* Filter starts */
+.filterMe{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 100;
+    background-color:rgba(150,150,150,0.5);
+}
+/* Filter ends */
+
+/* Parent starts */
+.parent{
+    z-index: 90;
+}
+/* Parent ends */
+
+/* Main Content starts */
+.main-content{
+    color: #FEFEFE;    
+    margin-left: 250px;   
+    background-color: #222222;
+    height: 100vh;
+}
+/* Main Content ends */

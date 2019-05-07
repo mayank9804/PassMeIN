@@ -1,0 +1,37 @@
+{
+  "name": "passbackend",
+  "version": "1.0.0",
+  "description": "Backend for passmein",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "PassBack"
+  },
+  "keywords": [
+    "backend",
+    "node",
+    "express"
+  ],
+  "author": "RSHBSXN",
+  "license": "ISC",
+  "dependencies": {
+    "authy": "^1.4.0",
+    "config": "^3.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "http": "0.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-simple": "^0.5.6",
+    "mongodb": "^3.2.3",
+    "mongoose": "^5.5.4",
+    "ngrok": "^3.1.1",
+    "nodemon": "^1.19.0",
+    "pug": "^2.0.3",
+    "twilio": "^3.30.2"
+  }
+}
