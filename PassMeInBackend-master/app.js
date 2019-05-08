@@ -52,14 +52,15 @@ async function registerUser(req,res){
     }
 }
 async function loginUser(req,res){
+    User.display();
     let number = req.body["phone"];
     let email = req.body['email'];
     let result = {};
     console.log(number,email)
-    if(number != null){
+    if(number != null && number !=''){
         result = await User.findByNumber(number)
     }
-    else if(email != null){
+    else if(email != null && email !=''){
         result = await User.findByEmail(email)
     }
     console.log(result);
@@ -77,7 +78,7 @@ async function loginUser(req,res){
                             res.status(500).send({success:false,message:"Some error occurred"});
                         else{
                             if(resp.approval_request.status == "approved"){
-                                token = jwt.encode({id:result._id},process.env.JWT_PRIVATE_KEY);
+                                token = jwt.encode({id:result._id},process.env.JWTPRIVATEKEY);
                                 res.status(200).send({success:true,message:resp.approval_request.status,token:token});
                             }
                             else
@@ -96,31 +97,46 @@ const authy = require("authy")(process.env.API_KEY);
 app.post("/login",loginUser);
 app.post("/register",registerUser);
 app.use("/card",checkAuth);
-
-app.post("/card/:type",async(req,res)=>{
-    const uid = jwt.verify(req.header("authorization"),process.env.JWT_PRIVATE_KEY);
-    const type = req.params.type
+app.get("/card/fetch",async (req,res)=>{
+    let token = req.header('authorization');
+    let uid = jwt.decode(token,process.env.JWTPRIVATEKEY);
+    let cards = await Card.findAllCards(uid.id);
+    console.log("BYE");
     
-    switch(type){
-        case 'fetch':
-            res.send(await Card.findAllCards(uid.id));
-            break;
-        case 'add':
-            if(req.body['url'] && req.body['email'] && req['username'] && req.body['password'] && req.body['sitename'])
-                res.send(await Card.addCard(uid.id,req.body['url'],req.body['email'],req.body['password'],req.body['sitename'],req['username']));
-            else
-                res.status(500).send({success:false,message:"Invalid card"});
-            break;
-        case 'update':
-            res.send(await Card.updateCard(req.body["id"],req.body['card']));
-            break;
-        case 'deletecard':
-            res.send(await Card.deleteCard(req.body['id']));
-            break;
-        default:
-            res.status(404).send("NOT FOUND");
-    }
+    res.status(200).send({success:true,cards:cards});
 })
+app.post("/card/add",async(req,res)=>{
+    let token = req.header('authorization');
+    let uid = jwt.decode(token,process.env.JWTPRIVATEKEY);
+    
+    console.log(req.body);
+    
+    if(req.body['url'] && req.body['email'] && req.body['username'] && req.body['password'] && req.body['sitename'] && req.body['notes'])
+        res.status(200).send(await Card.addCard(uid.id,req.body['url'],req.body['email'],req.body['password'],req.body['sitename'],req.body['username'],req.body['notes']));
+    else
+        res.status(500).send({success:false,message:"Invalid card"});
+});
+app.post("/card/update",async(req,res)=>{
+    let token = req.header('authorization');
+    let uid = jwt.decode(token,process.env.JWTPRIVATEKEY);
+    console.log("INPUT");
+    
+    console.log(req.body.card);
+    
+    let x = await Card.updateCard(req.body["id"],req.body['card'])
+    
+    
+    res.status(200).send(await Card.findAllCards(uid.id));
+});
+app.post("/card/deletecard",async(req,res)=>{
+    let token = req.header('authorization');
+    let uid = jwt.decode(token,process.env.JWTPRIVATEKEY);
+
+    console.log(req.body);
+    
+    res.status(200).send(await Card.deleteCard(req.body['id']));
+});
+
 //User.display();
 //Card.display();
 app.listen(port,console.log("listening at port:",port));

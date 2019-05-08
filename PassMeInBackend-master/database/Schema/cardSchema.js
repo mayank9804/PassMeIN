@@ -5,18 +5,20 @@ let cardSchema = new mongoose.Schema({
     email:String,
     password:String,
     siteName:String,
-    username:String
+    username:String,
+    notes:String
 });
 class Card{
     //CRUD ON CARDS
-    static async addCard(uid,url,email,pass,dom,uname){
+    static async addCard(uid,url,email,pass,dom,uname,notes){
         let card = new this.model({
             uid:uid,
             url:url,
             email:email,
             password:pass,
             siteName:dom,
-            username:uname
+            username:uname,
+            notes:notes
         });
         const result = await card.save();
         return result;
@@ -26,13 +28,14 @@ class Card{
     }
     static async updateCard(id,newCard){
         try{
-            const result = await this.model.findByIdAndUpdate(id,{
+            const result = await this.model.findOneAndUpdate({_id:id},{
                 $set:{
                     url:newCard.url,
                     email:newCard.email,
                     password:newCard.password,
-                    siteName:newCard.sitename,
-                    username:newCard.username
+                    siteName:newCard.siteName,
+                    username:newCard.username,
+                    notes:newCard.notes
                 }
             });
             return result;
@@ -43,7 +46,12 @@ class Card{
     }
     static async deleteCard(id){
         try{
-            const result = await this.model.findByIdAndRemove(id);
+            console.log("RESULTT");
+            console.log(id);
+            
+            const result = await this.model.findByIdAndDelete(id);
+            console.log(result);
+            
             return result;
         }
         catch(e){
