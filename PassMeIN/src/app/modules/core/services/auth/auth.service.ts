@@ -12,7 +12,7 @@ export class AuthService {
 
 
   private _role: string = "";
-  private TOKEN_KEY: string = null;
+  private TOKEN_KEY: string = 'token';
   private BASE_URL: string = environment.path;
   constructor(private _route: Router, private _http: HttpClient) { }
 
@@ -40,7 +40,6 @@ export class AuthService {
     return this._http.post(hiturl, toSubmit).pipe(
       tap(res => {
         this.saveToken(res['token']);
-        this._role = "user";
       }),
       catchError(err => {
         throw err;
@@ -53,15 +52,12 @@ export class AuthService {
     this._route.navigate(['/']);
   }
   public getToken(){
-    return this.TOKEN_KEY;
+    return localStorage.getItem(this.TOKEN_KEY);
   }
   public registerUser(toSubmit: any) {
     let hiturl = `${this.BASE_URL}/register`;
     return this._http.post(hiturl, toSubmit).pipe(
-      tap(res => {
-        this.saveToken(res['token']);
-        this._role = "user";
-      }),
+      tap(res => {}),
       catchError(err => {
         throw err;
       })

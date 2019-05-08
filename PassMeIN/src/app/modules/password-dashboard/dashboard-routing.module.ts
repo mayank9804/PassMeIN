@@ -7,6 +7,7 @@ import { GettingStartedComponent } from './components/getting-started/getting-st
 import { SettingsComponent } from './components/settings/settings.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { CardResolverService } from '../core/services/cards/card.resolver.service';
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
     children:[
       {
         path:'',
-        component:CardsComponent
+        component:CardsComponent,
+        resolve : {cards:CardResolverService}
       },
       {
         path:'profile',

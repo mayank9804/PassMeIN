@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  path: "http://localhost:3001"
+  path: "http://9a4438af.ngrok.io"
 };
 
 /*

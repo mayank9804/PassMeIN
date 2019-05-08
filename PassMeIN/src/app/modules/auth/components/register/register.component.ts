@@ -20,16 +20,7 @@ export class RegisterComponent implements OnInit {
     this._auth.registerUser(newUser).subscribe(res=>{
       console.log(res['error']);
       this.regIn = false;
-
-      if(res["success"]==false){
-        if(res["message"]=="Timed out")
-          this.message = "Request timed out. If you don't have the mobile application. Please download the application and try back again";
-        else if(res["message"]=="Access Denied")
-          this.message = "You have denied the request.";
-      }else{
-        this._route.navigate(['/dashboard']);
-      }
-      
+      this._route.navigate(['/login']);
     },err=>{
       console.log(err);
       this.message = "Some error occurred. Please try again later.";

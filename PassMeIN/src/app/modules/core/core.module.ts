@@ -7,6 +7,7 @@ import { FakedataService } from './services/fakedata/fakedata.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './interceptors/auth.interceptor';
 import { CardService } from './services/cards/card.service';
+import { CardResolverService } from './services/cards/card.resolver.service';
 
 @NgModule({
   declarations: [],
@@ -18,6 +19,7 @@ import { CardService } from './services/cards/card.service';
     HeroLoginGuard,
     AuthService,
     CardService,
+    CardResolverService,
     UserLoginGuard,
     FakedataService,
     {

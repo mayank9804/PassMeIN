@@ -1,14 +1,15 @@
 
 <div class="cards">
   <div class="cards-container">
+    
     <div class="card" *ngFor="let card of cards" >
-      <h2>{{card["site-name"]}}</h2>
+      <h2>{{card["siteName"]}}</h2>
       <p>{{card["username"]}}</p>
-      <p>{{card["id"]}}</p>
+      
       <div class="box">
         <div class="buttons">
-          <i class="ni ni-archive-2" onclick="deletealert();" (click)='setCard(card["id"]);' ></i>
-          <i class="ni ni-settings" onclick="openCardSettings()" (click)='setCard(card["id"]);'></i>
+          <i class="ni ni-archive-2" onclick="deletealert();" (click)='setCard(card["_id"]);' ></i>
+          <i class="ni ni-settings" onclick="openCardSettings()" (click)='setCard(card["_id"]);'></i>
           <i class="ni ni-send" onclick="redirect()"></i>
         </div>
       </div>
@@ -56,7 +57,7 @@
       </div>
       
       <div class="input-box">
-        <button type="submit" [ngClass]="{'disabled':!addCardForm.valid,'save-btn': addCardForm.valid}" (click)="addCard(addCardForm.value);addCardForm.reset()" onclick="closeCard()" >ADD</button>
+        <button type="submit" [ngClass]="{'disabled':!addCardForm.valid,'save-btn': addCardForm.valid}" (click)="addCard(addCardForm.value);addCardForm.reset();" onclick="closeCard()" >ADD</button>
       </div>
     </form>
 
@@ -76,6 +77,10 @@
         <input type="text" placeholder="xyz@gmail.com" id="input-email-setting act-input" ngModel [(ngModel)]='selectedCard["email"]' name="email" required>
       </div>
       <div class="input-box">
+          <label for="input-sitename-setting">Site Name</label>
+          <input type="text" placeholder="FACEBOOK" id="input-sitename-setting act-input" ngModel [(ngModel)]='selectedCard["siteName"]' name="siteName" required>
+        </div>
+      <div class="input-box">
         <label for="input-username-setting">Username</label>
         <input type="text" placeholder="mayank9804" id="input-username-setting act-input" ngModel [(ngModel)]='selectedCard["username"]' name="username" required>
       </div>
@@ -88,7 +93,7 @@
         <textarea rows="5" placeholder="Put Notes or hints"  id="input-notes-setting act-input" name="notes" ngModel [(ngModel)]='selectedCard["notes"]' style="resize:none;padding: 1%;" required></textarea>
       </div>
       <div class="input-box">
-        <button type="submit" [ngClass]="{'disabled':!cardSettingForm.valid,'add-btn': cardSettingForm.valid}" (click)='updateCard();cardSettingForm.reset()' onclick="closeCardSettings()">Save</button>
+        <button type="submit" [ngClass]="{'disabled':!cardSettingForm.valid,'add-btn': cardSettingForm.valid}" (click)='updateCard(cardSettingForm.value);cardSettingForm.reset()' onclick="closeCardSettings()">Save</button>
       </div>
     </form>
   </div>

@@ -39,9 +39,9 @@ export class LoginComponent implements OnInit {
       console.log(res);
       
       if(res["success"]==false){
-        if(res["message"]=="Timed out")
+        if(res["message"]=="pending")
           this.message = "Request timed out. If you don't have the mobile application. Please download the application and try back again";
-        else if(res["message"]=="Access Denied")
+        else if(res["message"]=="denied")
           this.message = "You have denied the request.";
       }else{
         this._route.navigate(['/dashboard']);
